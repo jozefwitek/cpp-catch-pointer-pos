@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     ofstream plik;
-    plik.open("D:\\Programy\\C++\\Zadania maturalne\\63\\wyniki.txt");
+    plik.open("C:\\User\\Desktop\\output.txt"); // path for output file
     while (1)
     {
         POINT cursorPos;
@@ -16,7 +16,7 @@ int main()
         x = cursorPos.x;
         float y = 0;
         y = cursorPos.y;
-        if ((GetKeyState(VK_RETURN) & 0x8000) != 0) // kliknięcie przycisku ENTER zapisuje X oraz Y
+        if ((GetKeyState(VK_RETURN) & 0x8000) != 0) // click ENTER button to save X and Y
         {
             cout << "X: "<< x << " || Y: " << y << endl;
             plik << x << " " << y << endl;
@@ -24,7 +24,7 @@ int main()
         }
         Sleep(100);
 
-        if (GetKeyState(VK_F5)) { // F5 wyłącza program
+        if (GetKeyState(VK_F5)) { // F5 shuts down the program
             plik.close();
             return 0;
         }
